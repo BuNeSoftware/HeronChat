@@ -7,6 +7,7 @@ public class Main {
             System.out.println("Started Heron in no-gui mode");
         } else {
             System.out.println("Started Heron in gui mode");
+            new ChatGui();
         }
     }
 }
