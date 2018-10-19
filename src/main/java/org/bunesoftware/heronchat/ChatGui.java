@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import java.awt.TextArea;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ChatGui {
 
@@ -33,6 +35,15 @@ public class ChatGui {
 		JButton btnNewButton = new JButton("Send");
 		btnNewButton.setBounds(335, 175, 110, 23);
 		heronFrame.getContentPane().add(btnNewButton);
+		
+		JButton connectionWindowGui = new JButton("Set Connection");
+		connectionWindowGui.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new ConnectionWindow();
+			}
+		});
+		connectionWindowGui.setBounds(335, 249, 124, 23);
+		heronFrame.getContentPane().add(connectionWindowGui);
 		heronFrame.setVisible(true);
 	}
 }
