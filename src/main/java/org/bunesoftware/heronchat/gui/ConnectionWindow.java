@@ -1,21 +1,27 @@
-package org.bunesoftware.heronchat;
+package org.bunesoftware.heronchat.gui;
+
+import org.bunesoftware.heronchat.Utils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ConnectionWindow {
+	
+	private JFrame frmConSet;
 
     public ConnectionWindow() {
         initialize();
     }
 
     private void initialize() {
-        JFrame frmConSet = new JFrame();
+        frmConSet = new JFrame();
         frmConSet.setResizable(false);
         frmConSet.setTitle("HeronChat");
-        frmConSet.setBounds(100, 100, 268, 109);
+        frmConSet.setBounds(100, 100, 257, 109);
         frmConSet.getContentPane().setLayout(null);
+        frmConSet.setLocationRelativeTo(null);
+        frmConSet.setVisible(false);
 
         JTextField ipField = new JTextField();
         ipField.setBounds(10, 11, 127, 20);
@@ -32,18 +38,17 @@ public class ConnectionWindow {
                 }
             }
         });
-        connectBtn.setBounds(147, 10, 89, 23);
+        connectBtn.setBounds(152, 10, 89, 23);
         frmConSet.getContentPane().add(connectBtn);
 
         JTextField nameField = new JTextField();
         nameField.setBounds(10, 42, 127, 20);
         frmConSet.getContentPane().add(nameField);
         nameField.setColumns(10);
-
-        JButton setNameBtn = new JButton("Set Name");
-        setNameBtn.setBounds(147, 41, 89, 23);
-        frmConSet.getContentPane().add(setNameBtn);
-        frmConSet.setVisible(true);
+    }
+    
+    public void show() {
+    	frmConSet.setVisible(true);
     }
 
     private boolean isRegexValid(String ip) {

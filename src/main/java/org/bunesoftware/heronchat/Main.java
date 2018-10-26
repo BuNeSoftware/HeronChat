@@ -1,5 +1,7 @@
 package org.bunesoftware.heronchat;
 
+import org.bunesoftware.heronchat.gui.ChatWindow;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,7 +9,7 @@ public class Main {
             System.out.println("Started Heron in no-gui mode");
         } else {
             System.out.println("Started Heron in gui mode");
-            new ChatGui();
+            new ChatWindow();
         }
     }
 }
