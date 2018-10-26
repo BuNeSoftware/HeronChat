@@ -1,4 +1,4 @@
-package org.bunesoftware.heronchat;
+package org.bunesoftware.heronchat.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -7,9 +7,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ChatGui {
+public class ChatWindow {
+	
+	private static final ConnectionWindow conWindow = new ConnectionWindow();
 
-	public ChatGui() {
+	public ChatWindow() {
 		initialize();
 	}
 
@@ -17,7 +19,7 @@ public class ChatGui {
 		JFrame heronFrame = new JFrame();
 		heronFrame.setResizable(false);
 		heronFrame.setTitle("HeronChat");
-		heronFrame.setBounds(100, 100, 465, 300);
+		heronFrame.setBounds(100, 100, 465, 278);
 		heronFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		heronFrame.getContentPane().setLayout(null);
 		heronFrame.setLocationRelativeTo(null);
@@ -28,21 +30,21 @@ public class ChatGui {
 		heronFrame.getContentPane().add(textArea);
 		
 		JTextField textField = new JTextField();
-		textField.setBounds(10, 176, 321, 20);
+		textField.setBounds(10, 216, 321, 20);
 		heronFrame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Send");
-		btnNewButton.setBounds(335, 175, 110, 23);
+		btnNewButton.setBounds(335, 215, 110, 23);
 		heronFrame.getContentPane().add(btnNewButton);
 		
 		JButton connectionWindowGui = new JButton("Set Connection");
 		connectionWindowGui.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new ConnectionWindow();
+				conWindow.show();
 			}
 		});
-		connectionWindowGui.setBounds(335, 249, 124, 23);
+		connectionWindowGui.setBounds(10, 182, 124, 23);
 		heronFrame.getContentPane().add(connectionWindowGui);
 		heronFrame.setVisible(true);
 	}
