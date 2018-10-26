@@ -27,6 +27,7 @@ public class ConnectionWindow {
         ipField.setBounds(10, 11, 127, 20);
         frmConSet.getContentPane().add(ipField);
         ipField.setColumns(10);
+        ipField.setText("Enter IP");
 
         JButton connectBtn = new JButton("Connect");
         connectBtn.addActionListener(new ActionListener() {
@@ -45,6 +46,7 @@ public class ConnectionWindow {
         nameField.setBounds(10, 42, 127, 20);
         frmConSet.getContentPane().add(nameField);
         nameField.setColumns(10);
+        nameField.setText("Enter display name");
     }
     
     public void show() {
